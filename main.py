@@ -1,4 +1,4 @@
-#importando a lib
+#importando as libs
 import customtkinter
 from tkinter import * 
 import numpy as np
@@ -15,7 +15,7 @@ janela= customtkinter.CTk()
 janela.geometry("700x400")
 
 #definindo o titulo do sistema
-janela.title("Sistema de Equações de segundo grau")
+janela.title("Sistema de Equações")
 
 #trocando o icone do sistema
 janela.iconbitmap("icone.ico")
@@ -26,13 +26,14 @@ janela.resizable(False, False)
 #definindo uma ação para o botão executar 
 def clique():
    
+    #pegando os dados digitados e colocando na vareavel Equacao1 e 2 
     Equacao1 = equacao1.get()
     Equacao2 = equacao2.get()
 
     # Gerar valores para o eixo x
     x = np.linspace(-10, 10, 100)
 
-    # Calcular os valores correspondentes no eixo y para a primeira equação
+    # Calcular os valores correspondentes no eixo x para a primeira equação
     y1 = eval(Equacao1)
 
     # Calcular os valores correspondentes no eixo y para a segunda equação
@@ -55,10 +56,10 @@ texto = customtkinter.CTkLabel(janela, text="Bem vindo", font=("Arial", 30))
 texto.pack(padx=10, pady=40)
 
 #criando campo para captar os dados
-equacao1 = customtkinter.CTkEntry(janela, placeholder_text="Digite a primeira equação",width=(200))
+equacao1 = customtkinter.CTkEntry(janela, placeholder_text="Digite a equação X",width=(200))
 equacao1.pack(padx=10, pady=10)
 
-equacao2 = customtkinter.CTkEntry(janela, placeholder_text="Digite a segunda equação", width=(200))
+equacao2 = customtkinter.CTkEntry(janela, placeholder_text="Digite a equação Y", width=(200))
 equacao2.pack(padx=10, pady=10)
 
 #colocando um botão 
