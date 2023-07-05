@@ -26,25 +26,30 @@ janela.resizable(False, False)
 
 # Definindo uma ação para o botão executar
 def clique():
+
     # Pegando os dados digitados e colocando na variável Equacao1 e 2
     Equacao1 = equacao1.get()
     Equacao2 = equacao2.get()
 
-    #caso nada seja digitado no sistema faça isso
+    # caso nada seja digitado no sistema faça isso
     if (Equacao1 == "") and (Equacao2 == ""):
-        messagebox.showerror("Erro", "Nenhuma equação foi digitada ou ocorreu um erro. Por favor, tente novamente.")
+        messagebox.showerror("Erro", "Digite equações valida para X e Y .")
         return
-    #caso nada seja digitado no campo equação X faça isso
+    
+    # caso nada seja digitado no campo equação X faça isso
     if (Equacao1 == "") :  
-        messagebox.showerror("Erro", "a equação X NÂO foi digitada .")
+        messagebox.showerror("Erro", "Digite uma Equação valida para X .")
         return
-    #caso nada seja digitado no campo equação Y faça isso
+    
+    # caso nada seja digitado no campo equação Y faça isso
     if (Equacao2 == ""):
-        messagebox.showerror("Erro", "a equação Y NÂO foi digitada .")
+        messagebox.showerror("Erro", "Digite uma Equação valida para Y .")
         return
-    #se tudo tiver certo execute o calculo e o grafico
+    
+    # se tudo tiver certo execute o calculo e o grafico
     else:
-         # Gerar valores para o eixo x
+
+        # Gerar valores para o eixo x
         x = np.linspace(-10, 10, 100)
 
         # Calcular os valores correspondentes no eixo x para a primeira equação
@@ -69,13 +74,13 @@ texto = customtkinter.CTkLabel(janela, text="Bem vindo", font=("Arial", 30))
 # Colocando texto na janela e passando a distância dos itens
 texto.pack(padx=10, pady=40)
 
-# Criando campo para captar os dados
+# Criando campos para captar os dados
 
-#campo equação X
+# campo equação X
 equacao1 = customtkinter.CTkEntry(janela, placeholder_text="Digite a equação X", width=(200))
 equacao1.pack(padx=10, pady=10)
 
-#campo equação Y
+# campo equação Y
 equacao2 = customtkinter.CTkEntry(janela, placeholder_text="Digite a equação Y", width=(200))
 equacao2.pack(padx=10, pady=10)
 
