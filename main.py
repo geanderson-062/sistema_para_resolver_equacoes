@@ -30,25 +30,18 @@ def clique():
     Equacao1 = equacao1.get()
     Equacao2 = equacao2.get()
 
-    #padrão aceitado pelo sistema numeros e simbolos
-    padrao = r'^[0-9+*/\-()\s]+$'
-
-    #se o que for digitado não for numero nem simbolo seja digitado no sistema faça isso
-    if (Equacao1 != padrao) and (Equacao2 != padrao):
-        messagebox.showerror("Erro", "Digite apenas numeros e simbolos, Por favor, tente novamente.")
-
     #caso nada seja digitado no sistema faça isso
     if (Equacao1 == "") and (Equacao2 == ""):
         messagebox.showerror("Erro", "Nenhuma equação foi digitada ou ocorreu um erro. Por favor, tente novamente.")
-
+        return
     #caso nada seja digitado no campo equação X faça isso
     if (Equacao1 == "") :  
         messagebox.showerror("Erro", "a equação X NÂO foi digitada .")
-
+        return
     #caso nada seja digitado no campo equação Y faça isso
     if (Equacao2 == ""):
         messagebox.showerror("Erro", "a equação Y NÂO foi digitada .")
-   
+        return
     #se tudo tiver certo execute o calculo e o grafico
     else:
          # Gerar valores para o eixo x
