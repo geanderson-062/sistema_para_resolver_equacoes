@@ -18,7 +18,7 @@ janela.geometry("700x400")
 janela.title("Sistema de Equações")
 
 #trocando o icone do sistema
-janela.iconbitmap("icone.ico")
+janela.iconbitmap("./assets/icone.ico")
 
 #impedindo reajuste da janela evitando que o usuario quebre a janela 
 janela.resizable(False, False)
